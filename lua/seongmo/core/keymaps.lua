@@ -1,34 +1,33 @@
 -- <leader>키를 space로 지정
-vim.g.mapleader = " " 
+vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
-
 
 ---------------------
 -- General Keymaps --
 ---------------------
 
-keymap.set("i", "jk", "<ESC>")                 -- space + jk : insert mode 나가기
+keymap.set("i", "jk", "<ESC>") --                 space + jk : insert mode 나가기
 
-keymap.set("n", "<leader>nh", ":nohl<CR>")     -- space + nh : 하이라이트 지우기
+keymap.set("n", "<leader>nh", ":nohl<CR>") --     space + nh : 하이라이트 지우기
 
-keymap.set("n", "x", '"_x')                    -- x키가 잘라내기가 아닌 삭제로 동작
+keymap.set("n", "x", '"_x') -- x키가 잘라내기가 아닌 삭제로 동작
 
 -- space + [+ or -] : 숫자 위에 커서가 있을 때 해당 숫자 증감
-keymap.set("n", "<leader>+", "<C-a>")          -- space + + : increment
-keymap.set("n", "<leader>-", "<C-x>")          -- space + - : decrement
+keymap.set("n", "<leader>+", "<C-a>") --          space + + : increment
+keymap.set("n", "<leader>-", "<C-x>") --          space + - : decrement
 
 -- 창 분할
-keymap.set("n", "<leader>sv", "<C-w>v")        -- space + sv : 화면 세로 분할
-keymap.set("n", "<leader>sh", "<C-w>s")        -- space + sh : 화면 가로 분할
-keymap.set("n", "<leader>se", "<C-w>=")        -- space + se : 분할된 화면 크기 정렬
-keymap.set("n", "<leader>sx", ":close<CR>")    -- space + sx : 분할된 화면 닫기
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")    -- space + sm : 분할된 화면 최대화 및 취소
+keymap.set("n", "<leader>sv", "<C-w>v") --        space + sv : 화면 세로 분할
+keymap.set("n", "<leader>sh", "<C-w>s") --        space + sh : 화면 가로 분할
+keymap.set("n", "<leader>se", "<C-w>=") --        space + se : 분할된 화면 크기 정렬
+keymap.set("n", "<leader>sx", ":close<CR>") --    space + sx : 분할된 화면 닫기
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- space + sm : 분할된 화면 최대화 및 취소
 
-keymap.set("n", "<leader>to", ":tabnew<CR>")   -- space + to : 새 탭 열기
+keymap.set("n", "<leader>to", ":tabnew<CR>") --   space + to : 새 탭 열기
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- space + tx : 현재 탭 닫기
-keymap.set("n", "<leader>tn", ":tabn<CR>")     --  space + tn : 다음 탭으로 이동
-keymap.set("n", "<leader>tp", ":tabp<CR>")     --  space + tp : 이전 탭으로 이동
+keymap.set("n", "<leader>tn", ":tabn<CR>") --     space + tn : 다음 탭으로 이동
+keymap.set("n", "<leader>tp", ":tabp<CR>") --     space + tp : 이전 탭으로 이동
 
 ----------------------
 -- Plugin Keybinds --
@@ -54,11 +53,11 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string u
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
--- telescope git commands (not on youtube nvim video)
-keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git commits (use <cr> to checkout) ["gc" for git commits]
+-- telescope git commands
+keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") --   space + gc : 깃 커밋보기
 keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") --  space + gb : 브랜치 보기
+keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") --    space + gs : 변경 사항 보기
 
--- restart lsp server (not on youtube nvim video)
+-- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
